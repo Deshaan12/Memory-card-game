@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8f5e9; /* Light green background */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.game-title {
+    font-size: 22px; /* Smaller title */
+    font-weight: bold;
+    color: #2e7d32; /* Dark green */
+    text-align: center;
+    margin-top: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    justify-content: center;
+    max-width: 320px; /* Smaller width */
+    margin: 10px auto;
+    padding: 15px;
+    background: #c8e6c9; /* Soft green board background */
+    border-radius: 8px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    width: 70px; /* Smaller cards */
+    height: 90px;
+    background: #a5d6a7;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+    border: 2px solid #388e3c;
+}
+
+.card img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    display: none;
+}
+
+.card.flipped {
+    background: white;
+    transform: scale(1.05);
+}
+
+.card.matched {
+    background: #66bb6a !important;
+    border: 2px solid #1b5e20;
+    transform: scale(1.1);
+}
+
+button {
+    background: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 15px; /* Smaller button */
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #388e3c;
+}
+
+#result-message {
+    font-size: 16px; /* Smaller text */
+    font-weight: bold;
+    color: #1b5e20;
+    margin-top: 10px;
+}
+
+/* 📱 Responsive Design for Smaller Screens */
+@media (max-width: 400px) {
+    .game-board {
+        grid-template-columns: repeat(3, 1fr); /* 3 cards per row on small screens */
+        max-width: 260px;
+    }
+    
+    .card {
+        width: 60px;
+        height: 80px;
+    }
+    
+    .game-title {
+        font-size: 18px;
+    }
+}
